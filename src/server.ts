@@ -1,6 +1,7 @@
 import fastify from "fastify";
+import authenticationRoutes from "./routes/authentication.routes";
 const app = fastify({ logger: true });
-
+app.register(authenticationRoutes);
 class Server {
 	public async start(port: number, host: string): Promise<void> {
 		try {
